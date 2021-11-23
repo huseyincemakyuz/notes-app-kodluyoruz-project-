@@ -50,7 +50,7 @@ body {
     line-height: 1.875rem;
     outline: none;
     border: none;
-    overflow-y: scroll;
+    
 }
 
 
@@ -97,7 +97,8 @@ body {
     margin-right: 40px;
     margin-bottom: 30px;
     text-align: center;
-    font-family: cursive;
+    font-family: 'Permanent Marker', cursive;
+    
     
 }
 
@@ -109,6 +110,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     overflow-y: scroll ;
+    
     
 }
 

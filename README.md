@@ -9,6 +9,6 @@
 
 ## App's Screenshot
 ---
-![Notes-app](/src/img/notes-app2.png)
+![Notes-app](/src/img/notes-app3.png)
 
 

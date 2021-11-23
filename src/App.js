@@ -17,7 +17,11 @@ function App() {
     const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [ 
         {
             id:Date.now + "" + Math.floor(Math.random()*78),
-            text:"sdklhajkda",
+            text:`Bu uygulamayla;
+            * Not ekleyebilir
+            * Notunu düzenleyebilir
+            * Kayıt edebilir
+            * Ve silebilirsiniz`,
             time:`${[d.getDate()]} ${month[ d.getMonth() + 1] } ${ day[d.getDay() ] } ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         },

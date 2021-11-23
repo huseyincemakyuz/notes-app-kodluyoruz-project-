@@ -4,12 +4,21 @@ import NoteContainer from './components/NoteContainer/NoteContainer';
 import { useState } from 'react';
 
 function App() {
+    const dateNew = new Date().toLocaleDateString();
+    const timeNew = new Date().toLocaleTimeString(); 
+    const [date, setDate] = useState(dateNew);
+    const [time, setTime] = useState(timeNew);
+    const d = new Date()
+    const day = ["Pazar","Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", ]
+    const month = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim","Kasım","Aralık"]
+   
+
 
     const [notes, setNotes]=useState([
         {
             id:Date.now + "" + Math.floor(Math.random()*78),
             text:"sdklhajkda",
-            time:"3:12",
+            time:`${[d.getDate()]} ${month[ d.getMonth() + 1] } ${ day[d.getDay() ] } ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         },
     ])
@@ -20,11 +29,14 @@ function App() {
         newNotes.push({
             id: Date.now + "" + Math.floor(Math.random()*78) ,
             text:"",
-            time:Date.now(),
+            time: `${[d.getDate()]} ${month[ d.getMonth() + 1] } ${ day[d.getDay() ] } ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         })
 
         setNotes(newNotes)
+        
+        setDate(new Date().toLocaleDateString());
+        setTime(new Date().toLocaleTimeString());
     }
 
     const deleteNote=(id) => {
@@ -37,6 +49,9 @@ function App() {
 
         newNotes.splice(index, 1)
         setNotes(newNotes)
+
+        setDate(new Date().toLocaleDateString());
+        setTime(new Date().toLocaleTimeString());
     }
 
     return (

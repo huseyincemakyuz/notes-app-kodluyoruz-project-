@@ -14,7 +14,7 @@ function App() {
    
 
 
-    const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [
+    const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [ 
         {
             id:Date.now + "" + Math.floor(Math.random()*78),
             text:"sdklhajkda",
@@ -54,12 +54,24 @@ function App() {
         setTime(new Date().toLocaleTimeString());
     }
 
+    const updateNote=(text, id) => {
+        const newNotes=[...notes]
+
+        const index=newNotes.findIndex(item => item.id === id)
+        if (index<0) {
+            return
+        }
+
+        newNotes[index].text = text
+        setNotes(newNotes)
+    }
+
     useEffect(() => {
         localStorage.setItem('allNotes',JSON.stringify(notes))
     },[notes]) 
     return (
         <div className="App">
-            <NoteContainer notes={notes} addNote={addNote} deleteNote={deleteNote} />
+            <NoteContainer notes={notes} addNote={addNote} deleteNote={deleteNote} updateNote={updateNote}/>
         </div>
     )
 }

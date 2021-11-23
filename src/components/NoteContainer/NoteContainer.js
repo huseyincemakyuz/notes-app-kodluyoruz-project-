@@ -30,6 +30,7 @@ function NoteContainer(props) {
                     key={item.id}
                     note={item}
                     deleteNote={props.deleteNote}
+                    updateNote={props.updateNote}
                 />)}
             </div>
         </div>

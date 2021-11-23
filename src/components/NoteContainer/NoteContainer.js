@@ -5,41 +5,41 @@ import './NoteContainer.css'
 function NoteContainer(props) {
     return (
         <div className="note-container"> 
-            <h2>Notes</h2>
-            <div clasName="note-container_notes">
+            <h1>Not Defteri <span className="icon-plus"><i className="fa fas fa-folder-plus fa-3x icon-add" ></i></span></h1>
+            <div className="note-container-notes custom-scroll">
                 <Note 
                     note={{
                         text:"adsadsa",
                         time:"4:32 PM",
-                        color:"cyan",
+                        color:"rgba(65, 95, 112, 0.45)"
                     }}  
                 />
                 <Note 
                     note={{
                         text:"adsadsa",
                         time:"4:32 PM",
-                        color:"cyan",
+                        color:"rgba(65, 95, 112, 0.45)"
                     }}  
                 />
                 <Note 
                     note={{
                         text:"adsadsa",
                         time:"4:32 PM",
-                        color:"cyan",
+                        color:"rgba(65, 95, 112, 0.45)"
                     }}  
                 />
                 <Note 
                     note={{
                         text:"adsadsa",
                         time:"4:32 PM",
-                        color:"cyan",
+                        color:"rgba(65, 95, 112, 0.45)"
                     }}  
                 />
                 <Note 
                     note={{
                         text:"adsadsa",
                         time:"4:32 PM",
-                        color:"cyan",
+                        color:"rgba(65, 95, 112, 0.45)"
                     }}  
                 />
             </div>

@@ -1,15 +1,51 @@
 .note-container {
+    margin-top: 30px;
     height: 100%;
 }
 
-.note-container h2 {
-    margin-bottom: 20px;
+.note-container  h1 {
+    color:#090325c9;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: cursive;
 }
 
-.note-container_notes {
+
+.note-container-notes {
+    position: relative;
     height: 90%;
-    display: flex;
+    display: block;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
     overflow-y: scroll ;
+    
 }
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 24px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: auto;
+    transform: translate(0, 0);
+}
+
+.fa-folder-plus{
+    color: #0a022e83;
+    font: 5em;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.fa-folder-plus::before {
+    content: "\f055";
+}
+
+.icon-plus i:hover {
+    cursor: pointer;
+    color:#090325c9;
+}
+
+

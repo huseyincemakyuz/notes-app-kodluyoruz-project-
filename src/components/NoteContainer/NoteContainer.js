@@ -29,6 +29,7 @@ function NoteContainer(props) {
                     props.notes.map((item) => <Note 
                     key={item.id}
                     note={item}
+                    deleteNote={props.deleteNote}
                 />)}
             </div>
         </div>

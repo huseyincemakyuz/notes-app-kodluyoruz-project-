@@ -37,7 +37,7 @@
     float: right;
 }
 
-.icon-delete > i:hover {
+.note-footer i:hover {
     cursor: pointer;
     color: darkgreen;
 }

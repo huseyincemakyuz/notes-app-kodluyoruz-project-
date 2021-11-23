@@ -5,7 +5,7 @@
 
 .note-container  h1 {
     color:#090325c9;
-    margin-right: 20px;
+    margin-right: 30px;
     margin-bottom: 30px;
     text-align: center;
     font-family: cursive;
@@ -40,6 +40,10 @@
 
 .fa-folder-plus::before {
     content: "\f055";
+}
+
+.icon-plus{
+    margin-left: 45px;
 }
 
 .icon-plus i:hover {

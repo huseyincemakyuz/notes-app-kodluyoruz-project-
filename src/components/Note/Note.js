@@ -9,7 +9,7 @@ function Note(props) {
     return (
         <div className="note" style={{backgroundColor:props.note.color}}>
             <textarea 
-                className="note-text" 
+                className="note-text custom-scroll" 
                 defaultValue={props.note.text} 
                 onChange={(event) => updateNote(event.target.value, props.note.id)}
             ></textarea>

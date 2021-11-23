@@ -1,8 +1,8 @@
 .note{
-    margin-bottom: 15px;
+    margin-bottom: 56px;
     padding: 25px;
-    height: 300px;
-    width: 270px;
+    height: 450px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     border-radius: 30px;
@@ -16,7 +16,7 @@
     line-height: 1.875rem;
     outline: none;
     border: none;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 

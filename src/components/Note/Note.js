@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import "./Note.css";
+import App from '../../App';
 
 function Note(props) {
     

@@ -4,6 +4,7 @@ import NoteContainer from './components/NoteContainer/NoteContainer';
 import { useState, useEffect } from 'react';
 
 function App() {
+    // Date and Time Functions
     const dateNew = new Date().toLocaleDateString();
     const timeNew = new Date().toLocaleTimeString(); 
     const [date, setDate] = useState(dateNew);
@@ -12,8 +13,7 @@ function App() {
     const day = ["Pazar","Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", ]
     const month = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim","Kasım","Aralık"]
    
-
-
+    // Notes
     const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [ 
         {
             id:Date.now + "" + Math.floor(Math.random()*78),
@@ -22,6 +22,8 @@ function App() {
             color:"rgba(65, 95, 112, 0.45)"
         },
     ])
+
+    // Add Note Function
 
     const addNote=(item) => {
         const newNotes=[...notes]
@@ -39,6 +41,7 @@ function App() {
         setTime(new Date().toLocaleTimeString());
     }
 
+    // Delete Note Function
     const deleteNote=(id) => {
         const newNotes=[...notes]
 
@@ -53,6 +56,8 @@ function App() {
         setDate(new Date().toLocaleDateString());
         setTime(new Date().toLocaleTimeString());
     }
+
+    // Update Function
 
     const updateNote=(text, id) => {
         const newNotes=[...notes]

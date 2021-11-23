@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NoteContainer from './components/NoteContainer/NoteContainer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
     const dateNew = new Date().toLocaleDateString();
@@ -14,7 +14,7 @@ function App() {
    
 
 
-    const [notes, setNotes]=useState([
+    const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [
         {
             id:Date.now + "" + Math.floor(Math.random()*78),
             text:"sdklhajkda",
@@ -54,6 +54,9 @@ function App() {
         setTime(new Date().toLocaleTimeString());
     }
 
+    useEffect(() => {
+        localStorage.setItem('allNotes',JSON.stringify(notes))
+    },[notes]) 
     return (
         <div className="App">
             <NoteContainer notes={notes} addNote={addNote} deleteNote={deleteNote} />

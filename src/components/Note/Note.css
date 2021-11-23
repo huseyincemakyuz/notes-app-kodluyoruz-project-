@@ -19,6 +19,16 @@
     overflow: hidden;
 }
 
+
+
+.note-footer {
+    color: rgb(43, 78, 3);
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+   
+}
+
 .fa {
     display: inline-block;
     font: normal normal normal 24px/1 FontAwesome;

@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import NoteContainer from './components/NoteContainer/NoteContainer';
 import { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown'
+
 
 function App() {
     // Date and Time Functions
@@ -12,24 +14,22 @@ function App() {
     const d = new Date()
     const day = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ]
     const month = ["January","February", "March", " April", " May", "June", "July ", "August", "September", "October"," November","December"]
+    
     // Initial value
-    const initialValue = 
+    const initialValue = [
     { 
         id: Date.now + "" + Math.floor(Math.random()*78) ,
         text:`Bu uygulamayla;
 * Notunuzu ekleyebilir,
 * Düzenleyebilir,
 * Kayıt edebilir,
-* Ve silebilirsiniz`,
-        time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
+* Ve silebilirsiniz.`,
+        time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth()] }  ${time}`,
         color:"rgba(65, 95, 112, 0.45)"
-
-        
-    }
+    }]
     
     // Notes
-    const [notes, setNotes]=useState(!localStorage.setNotes ? 
-        [initialValue] : JSON.parse(localStorage.getItem("allNotes")))
+    const [notes, setNotes]=useState(initialValue)
 
     // Add Note Function
 
@@ -39,10 +39,10 @@ function App() {
         newNotes.push({
             id: Date.now + "" + Math.floor(Math.random()*78) ,
             text:"",
-            time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
+            time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth()] }  ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         })
-
+       
         setNotes(newNotes)
         
         setDate(new Date().toLocaleDateString());
@@ -60,7 +60,7 @@ function App() {
 
         newNotes.splice(index, 1)
         setNotes(newNotes)
-        
+       
         setDate(new Date().toLocaleDateString());
         setTime(new Date().toLocaleTimeString());
     }
@@ -78,6 +78,16 @@ function App() {
         newNotes[index].text = text
         setNotes(newNotes)
     }
+    // Saved Notes
+    useEffect(() => {
+		const savedNotes = JSON.parse(
+			localStorage.getItem('allNotes')
+		);
+
+		if (savedNotes) {
+			setNotes(savedNotes);
+		} 
+	}, []);
 
     useEffect(() => {
         localStorage.setItem("allNotes", JSON.stringify(notes));

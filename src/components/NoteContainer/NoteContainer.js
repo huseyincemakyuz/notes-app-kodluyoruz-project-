@@ -2,11 +2,12 @@ import React from 'react'
 import Note from '../Note/Note'
 
 
+
 function NoteContainer(props) {
 
     const reverArray=(arr) => {
-        const array=[]
-
+       const array=[]
+      
         for(let i=arr.lengt - 1 ; i>=0; --i){
            array.push(arr[i])
         }
@@ -14,7 +15,7 @@ function NoteContainer(props) {
     };
 
     const notes = reverArray(props.notes)
-
+    
     return (
         <div className="note-container"> 
             <h1>Notes App

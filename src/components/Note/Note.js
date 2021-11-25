@@ -6,7 +6,7 @@ function Note(props) {
     const updateNote = (text, id) => {(props.updateNote(text, id));};
 
     return (
-        <div className="note" style={{backgroundColor:props.note.color}}>
+        <div className="note" style={{backgroundColor: props.note.color}}>
             <textarea 
                 className="note-text custom-scroll" 
                 defaultValue={props.note.text} 

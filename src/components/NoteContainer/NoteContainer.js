@@ -1,6 +1,6 @@
 import React from 'react'
 import Note from '../Note/Note'
-import App from '../../App';
+
 
 function NoteContainer(props) {
 

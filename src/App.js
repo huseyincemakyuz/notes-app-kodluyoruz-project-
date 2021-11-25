@@ -12,25 +12,28 @@ function App() {
     const d = new Date()
     const day = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ]
     const month = ["January","February", "March", " April", " May", "June", "July ", "August", "September", "October"," November","December"]
-   
+    // Initial value
+    const initialValue = 
+    { 
+        id: Date.now + "" + Math.floor(Math.random()*78) ,
+        text:`Bu uygulamayla;
+* Notunuzu ekleyebilir,
+* Düzenleyebilir,
+* Kayıt edebilir,
+* Ve silebilirsiniz`,
+        time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
+        color:"rgba(65, 95, 112, 0.45)"
+    }
+    
     // Notes
-    const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [ 
-        {
-            id:Date.now + "" + Math.floor(Math.random()*78),
-            text:`Bu uygulamayla;
-            * Not ekleyebilir
-            * Notunu düzenleyebilir
-            * Kayıt edebilir
-            * Ve silebilirsiniz`,
-            time:`${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
-            color:"rgba(65, 95, 112, 0.45)"
-        },
-    ])
+    const [notes, setNotes]=useState(!localStorage.setNotes ? 
+        [initialValue] :  JSON.parse(localStorage.getItem("allNotes")))
 
     // Add Note Function
 
     const addNote=(item) => {
         const newNotes=[...notes]
+        localStorage.setItem("allNotes", true);
 
         newNotes.push({
             id: Date.now + "" + Math.floor(Math.random()*78) ,
@@ -56,7 +59,7 @@ function App() {
 
         newNotes.splice(index, 1)
         setNotes(newNotes)
-
+        localStorage.clear();
         setDate(new Date().toLocaleDateString());
         setTime(new Date().toLocaleTimeString());
     }
@@ -76,8 +79,9 @@ function App() {
     }
 
     useEffect(() => {
-        localStorage.setItem('allNotes',JSON.stringify(notes))
-    },[notes]) 
+        localStorage.setItem("allNotes", JSON.stringify(notes));
+      }, [notes]);
+    
     return (
         <div className="App">
             <NoteContainer notes={notes} addNote={addNote} deleteNote={deleteNote} updateNote={updateNote}/>

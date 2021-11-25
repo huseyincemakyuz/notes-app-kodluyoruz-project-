@@ -23,17 +23,18 @@ function App() {
 * Ve silebilirsiniz`,
         time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
         color:"rgba(65, 95, 112, 0.45)"
+
+        
     }
     
     // Notes
     const [notes, setNotes]=useState(!localStorage.setNotes ? 
-        [initialValue] :  JSON.parse(localStorage.getItem("allNotes")))
+        [initialValue] : JSON.parse(localStorage.getItem("allNotes")))
 
     // Add Note Function
 
     const addNote=(item) => {
         const newNotes=[...notes]
-        localStorage.setItem("allNotes", true);
 
         newNotes.push({
             id: Date.now + "" + Math.floor(Math.random()*78) ,
@@ -59,7 +60,7 @@ function App() {
 
         newNotes.splice(index, 1)
         setNotes(newNotes)
-        localStorage.clear();
+        
         setDate(new Date().toLocaleDateString());
         setTime(new Date().toLocaleTimeString());
     }

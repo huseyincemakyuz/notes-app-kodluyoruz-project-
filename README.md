@@ -4,11 +4,11 @@
 ---
 * Kullanıcı yeni not oluşturabilir.
 * Oluşturulan notu düzenleyebilir.
-* Oluşturulan notu silenebilir.
+* Oluşturulan notu silebilir.
 * İlgili browser penceresi kapatıldığında yazmış olduğu notları kaybetmemektedir.
 
 ## App's Screenshot
 ---
-![Notes-app](/src/img/notes-app3.png)
+![Notes-app](/src/img/notes-app-last.png)
 
 

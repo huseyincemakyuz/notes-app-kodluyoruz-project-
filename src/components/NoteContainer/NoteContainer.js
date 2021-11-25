@@ -17,7 +17,7 @@ function NoteContainer(props) {
 
     return (
         <div className="note-container"> 
-            <h1>Not Defteri
+            <h1>Notes App
                 <span className="icon-plus">
                     <i className="fa fas fa-folder-plus fa-3x icon-add" 
                     onClick={(item) => {props.addNote(item)}}

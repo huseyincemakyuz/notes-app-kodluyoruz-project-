@@ -10,8 +10,8 @@ function App() {
     const [date, setDate] = useState(dateNew);
     const [time, setTime] = useState(timeNew);
     const d = new Date()
-    const day = ["Pazar","Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", ]
-    const month = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim","Kasım","Aralık"]
+    const day = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ]
+    const month = ["January","February", "March", " April", " May", "June", "July ", "August", "September", "October"," November","December"]
    
     // Notes
     const [notes, setNotes]=useState(JSON.parse(localStorage.getItem('allNotes')) || [ 
@@ -22,7 +22,7 @@ function App() {
             * Notunu düzenleyebilir
             * Kayıt edebilir
             * Ve silebilirsiniz`,
-            time:`${[d.getDate()]} ${month[ d.getMonth() + 1] } ${ day[d.getDay() ] } ${time}`,
+            time:`${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         },
     ])
@@ -35,7 +35,7 @@ function App() {
         newNotes.push({
             id: Date.now + "" + Math.floor(Math.random()*78) ,
             text:"",
-            time: `${[d.getDate()]} ${month[ d.getMonth() + 1] } ${ day[d.getDay() ] } ${time}`,
+            time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth() + 1] }  ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         })
 

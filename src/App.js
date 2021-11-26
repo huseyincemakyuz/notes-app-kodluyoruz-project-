@@ -44,7 +44,7 @@ function App() {
         const index=newNotes.findIndex(item => item.id === id)
         
         var del = window.confirm("Are you sure you want to delete this note?");
-        if (del == true) {
+        if (del === true) {
             if (index<0) {
                 return
         }

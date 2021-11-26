@@ -13,6 +13,7 @@ function Note(props) {
                 className="note-text custom-scroll"  
                 defaultValue={props.note.text} 
                 onChange={(event) => updateNote(event.target.value, props.note.id)}
+                spellcheck="false"
             ></textarea>
             <div className="note-footer">
                 <p className="date-part">{props.note.time} 

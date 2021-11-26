@@ -1,14 +1,16 @@
 # Notes App
 
-## Özellikler
+## Features
 ---
-* Kullanıcı yeni not oluşturabilir.
-* Oluşturulan notu düzenleyebilir.
-* Oluşturulan notu silebilir.
-* İlgili browser penceresi kapatıldığında yazmış olduğu notları kaybetmemektedir.
+You can:
+* Click/Focus to edit,
+* Click off/Blur to save,
+* Add a new note  by clicking 
+  the plus sign above,
+* Delete this note,
 
 ## App's Screenshot
 ---
-![Notes-app](/src/img/notes-app6.png)
+![Notes-app](/src/img/notes-app7.png)
 
 

@@ -16,7 +16,13 @@ function App() {
     
     // Notes
     const [notes, setNotes]=useState(
-        localStorage.getItem("allNotes") ? JSON.parse(localStorage.getItem("allNotes")) : [])
+        localStorage.getItem("allNotes") ? JSON.parse(localStorage.getItem("allNotes")) 
+        : [{
+            id: Date.now + "" + Math.floor(Math.random()*78) ,
+            text:"",
+            time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth()] }  ${time}`,
+            color:"rgba(65, 95, 112, 0.45)"
+        }])
     
         
     // Add Note Function
@@ -74,8 +80,7 @@ function App() {
     useEffect(() => {
         localStorage.setItem("allNotes", JSON.stringify(notes));
       }, [notes]);
-
-    
+      
     return (
         <div className="App">
             <NoteContainer notes={notes} addNote={addNote} deleteNote={deleteNote} updateNote={updateNote}/>

@@ -32,6 +32,10 @@ body {
 }
 
 /******************************************************** Note-Css  ****************************************/
+::placeholder {
+    color:rgb(94, 91, 91)
+}
+
 .note{
     margin-bottom: 56px;
     padding: 25px;
@@ -52,8 +56,6 @@ body {
     border: none;
     
 }
-
-
 
 .note-footer {
     color: rgb(43, 78, 3);

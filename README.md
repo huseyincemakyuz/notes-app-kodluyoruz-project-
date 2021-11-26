@@ -1,5 +1,7 @@
 # Notes App
 
+[Click](https://notes-app-hsyncm.netlify.app/)
+ to go to the application!
 ## Features
 ---
 You can:

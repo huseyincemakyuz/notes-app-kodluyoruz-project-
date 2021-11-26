@@ -16,7 +16,7 @@ function Note(props) {
             ></textarea>
             <div className="note-footer">
                 <p className="date-part">{props.note.time} 
-                <i className="fas fa-trash fa destroy" onClick={() => props.deleteNote(props.note.id)}></i>
+                <i className="fas fa-trash fa destroy " onClick={() => props.deleteNote(props.note.id)} ></i>
                 </p>
             </div>
         </div>

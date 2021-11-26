@@ -14,14 +14,27 @@ function App() {
     const day = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ]
     const month = ["January","February", "March", " April", " May", "June", "July ", "August", "September", "October"," November","December"]
     
+    const initialNotes = {
+        defaultNotes:[
+            {
+                id: Date.now + "" + Math.floor(Math.random()*78) ,
+                text:"",
+                time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth()] }  ${time}`,
+                color:"rgba(65, 95, 112, 0.45)"
+
+            }
+        ]
+    };
     
     // Notes
-    const [notes, setNotes]=useState([])
-
+    const [notes, setNotes]=useState(
+        localStorage.getItem("allNotes") ? JSON.parse(localStorage.getItem("allNotes")) : initialNotes)
+    
         
     // Add Note Function
 
-    const addNote=() => {
+    const addNote=(e) => {
+        e.preventDefault()
         const newNotes=[...notes]
 
         newNotes.push({
@@ -31,7 +44,6 @@ function App() {
             color:"rgba(65, 95, 112, 0.45)"
         })
 
-        newNotes.sort()
         setNotes(newNotes)
         
         setDate(new Date().toLocaleDateString());
@@ -41,15 +53,16 @@ function App() {
     // Delete Note Function
     const deleteNote=(id) => {
         const newNotes=[...notes]
-
         const index=newNotes.findIndex(item => item.id === id)
-        if (index<0) {
-            return
+        
+        var del = window.confirm("Are you sure you want to delete this note?");
+        if (del == true) {
+            if (index<0) {
+                return
         }
-
         newNotes.splice(index, 1)
         setNotes(newNotes)
-       
+    }
         setDate(new Date().toLocaleDateString());
         setTime(new Date().toLocaleTimeString());
     }
@@ -68,15 +81,15 @@ function App() {
         setNotes(newNotes)
     }
     // Saved Notes
-    useEffect(() => {
-		const savedNotes = JSON.parse(
-			localStorage.getItem('allNotes')
-		);
+    // useEffect(() => {
+	// 	const savedNotes = JSON.parse(
+	// 		localStorage.getItem('allNotes')
+	// 	);
 
-		if (savedNotes) {
-			setNotes(savedNotes);
-		} 
-	}, []);
+	// 	if (savedNotes) {
+	// 		setNotes(savedNotes);
+	// 	} 
+	// }, []);
 
     useEffect(() => {
         localStorage.setItem("allNotes", JSON.stringify(notes));

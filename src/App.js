@@ -20,7 +20,6 @@ function App() {
     
         
     // Add Note Function
-
     const addNote=(e) => {
         e.preventDefault()
         const newNotes=[...notes]

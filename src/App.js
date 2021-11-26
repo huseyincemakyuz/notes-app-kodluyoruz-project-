@@ -67,6 +67,9 @@ function App() {
 
         newNotes[index].text = text
         setNotes(newNotes)
+
+        setDate(date);
+        setTime(new Date().toLocaleTimeString());
     }
 
     useEffect(() => {

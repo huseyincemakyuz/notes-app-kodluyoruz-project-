@@ -1,20 +1,19 @@
 import React from 'react'
-import Note from '../Note/Note'
+import Note from './Note';
 
 
 
 function NoteContainer(props) {
-
-    const reverArray=(arr) => {
-       const array=[]
-      
-        for(let i=arr.lengt - 1 ; i>=0; --i){
-           array.push(arr[i])
+    
+    function reverseArray(arr) {
+        let newArray = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          newArray.push(arr[i]);
         }
-        return array
-    };
+        return newArray;
+      }
 
-    const notes = reverArray(props.notes)
+      const notes = reverseArray(props.notes)
     
     return (
         <div className="note-container"> 
@@ -27,7 +26,7 @@ function NoteContainer(props) {
             </h1>
             <div className="note-container-notes custom-scroll">
                 {
-                    props.notes.map((item) => <Note 
+                    notes.map((item) => <Note 
                     key={item.id}
                     note={item}
                     deleteNote={props.deleteNote}

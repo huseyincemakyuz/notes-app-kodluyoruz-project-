@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import NoteContainer from './components/NoteContainer/NoteContainer';
+import NoteContainer from './components/NoteContainer';
 import { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown'
 
 
 function App() {
@@ -15,25 +14,14 @@ function App() {
     const day = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ]
     const month = ["January","February", "March", " April", " May", "June", "July ", "August", "September", "October"," November","December"]
     
-    // Initial value
-    const initialValue = [
-    { 
-        id: Date.now + "" + Math.floor(Math.random()*78) ,
-        text:`Bu uygulamayla;
-* Notunuzu ekleyebilir,
-* Düzenleyebilir,
-* Kayıt edebilir,
-* Ve silebilirsiniz.`,
-        time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth()] }  ${time}`,
-        color:"rgba(65, 95, 112, 0.45)"
-    }]
     
     // Notes
-    const [notes, setNotes]=useState(initialValue)
+    const [notes, setNotes]=useState([])
 
+        
     // Add Note Function
 
-    const addNote=(item) => {
+    const addNote=() => {
         const newNotes=[...notes]
 
         newNotes.push({
@@ -42,7 +30,8 @@ function App() {
             time: `${ day[d.getDay() ] } ${[d.getDate()]} ${month[ d.getMonth()] }  ${time}`,
             color:"rgba(65, 95, 112, 0.45)"
         })
-       
+
+        newNotes.sort()
         setNotes(newNotes)
         
         setDate(new Date().toLocaleDateString());
@@ -92,6 +81,7 @@ function App() {
     useEffect(() => {
         localStorage.setItem("allNotes", JSON.stringify(notes));
       }, [notes]);
+
     
     return (
         <div className="App">

@@ -1,6 +1,8 @@
 import React from 'react'
 
 
+
+
 function Note(props) {
     
     const updateNote = (text, id) => {(props.updateNote(text, id));};
@@ -8,7 +10,7 @@ function Note(props) {
     return (
         <div className="note" style={{backgroundColor: props.note.color}}>
             <textarea 
-                className="note-text custom-scroll" 
+                className="note-text custom-scroll"  
                 defaultValue={props.note.text} 
                 onChange={(event) => updateNote(event.target.value, props.note.id)}
             ></textarea>

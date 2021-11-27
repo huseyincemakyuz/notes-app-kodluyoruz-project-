@@ -22,6 +22,7 @@ function NoteContainer(props) {
                     <i className="fa fas fa-folder-plus fa-3x icon-add" 
                     onClick={(item) => {props.addNote(item)}}
                     ></i>
+                     <i className="fas fa-check fa" id="edit-icon"></i>
                 </span>
             </h1>
             <div className="note-container-notes custom-scroll">
@@ -31,7 +32,7 @@ function NoteContainer(props) {
                     note={item}
                     deleteNote={props.deleteNote}
                     updateNote={props.updateNote}
-                />)}
+                   />)}
             </div>
         </div>
     )

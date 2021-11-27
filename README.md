@@ -13,6 +13,6 @@ You can:
 
 ## App's Screenshot
 ---
-![Notes-app](/src/img/notes-app7.png)
+![Notes-app](src/img/notes-app8.png)
 
 

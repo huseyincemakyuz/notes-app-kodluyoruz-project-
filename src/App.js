@@ -26,8 +26,7 @@ function App() {
     
         
     // Add Note Function
-    const addNote=(e) => {
-        e.preventDefault()
+    const addNote=() => {
         const newNotes=[...notes]
 
         newNotes.push({
@@ -76,8 +75,8 @@ function App() {
         setDate(date);
         setTime(new Date().toLocaleTimeString());
     }
-
-    useEffect(() => {
+   
+     useEffect(() => {
         localStorage.setItem("allNotes", JSON.stringify(notes));
       }, [notes]);
       
